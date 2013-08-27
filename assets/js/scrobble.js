@@ -1,12 +1,12 @@
 /*
  * Build Watched/Unwatched menu
  */
-function scrobbleMenu(type, ratingKey, addrPMS) {
+function scrobbleMenu(type, ratingKey, addrPMS, viewShowOption) {
 	var xmlstr = '<?xml version="1.0" encoding="UTF-8"?><atv><head><script src="http://atv.plexconnect/js/scrobble.js"/> \
 					<script src="http://atv.plexconnect/js/utils.js"/></head> \
 					<body><optionList id="scrobble.optionDialog"><title>' + type + '</title><items>';
 	
-	if (type.search(/Deck|Recently/) !== -1)
+	if (viewShowOption)
 	{
   		xmlstr += '<oneLineMenuItem id="item1" onSelect="viewShow(\'' + addrPMS + '\', \'' + ratingKey + '\');atv.unloadPage();"> \
 					<label>                  View Show</label></oneLineMenuItem>';
