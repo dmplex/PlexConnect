@@ -11,7 +11,7 @@
 
     <scroller id="com.sample.movie-showcase-grid">
       <items>
-        <collectionDivider alignment="left" accessibilityLabel="On Deck">
+        <collectionDivider alignment="left" accessibilityLabel="{{TEXT(On Deck)}}">
           {{CUT(@OnDeck/size:CUT:0=CUT|1=)}}
           <title>{{TEXT(On Deck)}}</title>
         </collectionDivider>
@@ -23,7 +23,7 @@
                 <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}"
                             onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('{{URL(key)}}&amp;PlexConnect=Play')"
                             onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('{{URL(key)}}&amp;PlexConnect=EpisodePrePlay')"
-                            onHoldSelect="atv.sessionStorage['scrobbleJump']='{{VAL(grandparentKey)}}';scrobbleMenu('On Deck Episode', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
+                            onHoldSelect="scrobbleMenu('{{TEXT(On Deck Episode)}}', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}', '{{VAL(grandparentKey)}}');">
                   {{COPY(@OnDeck/Video)}}
                   <title>{{VAL(title)}}</title>
                   <subtitle>{{episodestring(parentIndex:0:index:0)}}</subtitle>
@@ -35,7 +35,7 @@
           </sections>
         </shelf>
 
-        <collectionDivider alignment="left" accessibilityLabel="Recently Aired">
+        <collectionDivider alignment="left" accessibilityLabel="{{TEXT(Recently Aired)}}">
           {{CUT(@RecentlyAired/size:CUT:0=CUT|1=)}}
           <title>{{TEXT(Recently Aired)}}</title>
         </collectionDivider>
@@ -47,7 +47,7 @@
                 <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}"
                             onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('{{URL(key)}}&amp;PlexConnect=Play')"
                             onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('{{URL(key)}}&amp;PlexConnect=EpisodePrePlay')"
-                            onHoldSelect="atv.sessionStorage['scrobbleJump']='{{VAL(grandparentKey)}}';scrobbleMenu('Recently Aired Episode', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
+                            onHoldSelect="scrobbleMenu('{{TEXT(Recently Aired Episode)}}', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}', '{{VAL(grandparentKey)}}');">
                   {{COPY(@RecentlyAired/Video)}}
                   <title>{{VAL(title)}}</title>
                   <subtitle>{{episodestring(parentIndex:0:index:0)}}</subtitle>
@@ -59,7 +59,7 @@
           </sections>
         </shelf>
 
-        <collectionDivider alignment="left" accessibilityLabel="Recently Added">
+        <collectionDivider alignment="left" accessibilityLabel="{{TEXT(Recently Added)}}">
           {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
           <title>{{TEXT(Recently Added)}}</title>
         </collectionDivider>
@@ -71,7 +71,7 @@
                 <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}"
                             onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('{{URL(key)}}&amp;PlexConnect=Season')"
                             onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('{{URL(key)}}&amp;PlexConnect=Season')"
-                            onHoldSelect="atv.sessionStorage['scrobbleJump']='{{VAL(parentKey)}}';scrobbleMenu('Recently Added', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
+                            onHoldSelect="scrobbleMenu('{{TEXT(Recently Added)}}', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}', '{{VAL(parentKey)}}');">
                   {{COPY(@RecentlyAdded/Directory)}}
                   <title>{{VAL(parentTitle)}}</title>
                   <subtitle>{{TEXT(Season)}} {{VAL(index)}}</subtitle>
